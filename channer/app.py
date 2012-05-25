@@ -3,7 +3,7 @@ from models import ImageLink, RedisManager, ObjectNotFoundError
 import settings
 
 app = Flask(__name__)
-app.config.from_object('channer.settings')
+app.config.from_object('settings')
 
 ImageManager = RedisManager(ImageLink)
 
