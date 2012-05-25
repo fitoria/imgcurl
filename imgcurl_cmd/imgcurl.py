@@ -4,9 +4,10 @@ import requests
 from optparse import OptionParser
 parser = OptionParser()
 
+#change this!
 BASE_URL = "http://127.0.0.1:5000%s"
 
-API_KEY = "foo"
+API_KEY = "CHANGE_ME"
 
 ADD_URL = BASE_URL % '/image/add/'
 DEL_URL = BASE_URL % '/image/delete/'
@@ -37,4 +38,3 @@ if __name__ == "__main__":
     if len(args) < 1:
         sys.exit('wrong args number <key, value>')
     main(options.action, *args)
-

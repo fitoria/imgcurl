@@ -1,9 +1,14 @@
-A dead simple app to store your favorite images
+A dead simple app to store your favorite images links in easy to remember urls.
 
 This just redirects to your favorite images links.
 
-Example
-
+Example.
 http://yoururl.com/funnycat will redirect to http://otherdomain.com/images/uploads/2011/cat.jpg
 
 Easy to remember and to setup!
+
+Uses Flask and three dead simple views.
+Uses Redis and an incomplete "ORM" that I tried to build, I'll fix it later.
+Some tests do not pass because of this.
+
+This won't be ultra documented, don't hope much, done just for shits and giggles.

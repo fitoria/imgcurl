@@ -1,4 +1,4 @@
-DEBUG = True
+DEBUG = False
 
 REDIS_CONNECTION = {
     'host': 'localhost',
@@ -6,4 +6,4 @@ REDIS_CONNECTION = {
     'db': 0,
 }
 
-API_KEY = "foo"
+API_KEY = "CHANGE_ME"
