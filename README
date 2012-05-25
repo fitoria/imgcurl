@@ -1,0 +1,9 @@
+A dead simple app to store your favorite images
+
+This just redirects to your favorite images links.
+
+Example
+
+http://yoururl.com/funnycat will redirect to http://otherdomain.com/images/uploads/2011/cat.jpg
+
+Easy to remember and to setup!
