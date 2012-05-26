@@ -1,9 +1,10 @@
-A dead simple app to store your favorite images links in easy to remember urls.
+A dead simple app to store your favorite links in easy to remember urls.
 
-This just redirects to your favorite images links.
+This just redirects to your favorite images or links.
 
 Example.
-http://yoururl.com/funnycat will redirect to http://otherdomain.com/images/uploads/2011/cat.jpg
+http://i.fitoria.net/angry-coder will redirect to http://i.imgur.com/sd3tV.gif
+http://i.fitoria.net/trololo -> http://www.youtube.com/watch?v=eNxygsLGHSQ
 
 Easy to remember and to setup!
 
