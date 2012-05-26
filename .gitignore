@@ -1,3 +1,4 @@
 imgcurl/settings.py
+imgcurl_cmd/settings.py
 *.pyc
 *.swp

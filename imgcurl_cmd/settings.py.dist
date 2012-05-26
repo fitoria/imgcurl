@@ -1,0 +1,2 @@
+BASE_URL = "http://yourdomain.com%s"
+API_KEY = "CHANGE_ME"

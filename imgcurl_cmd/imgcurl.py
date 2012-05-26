@@ -1,22 +1,21 @@
 import sys
 import requests
+import settings
 
 from optparse import OptionParser
 parser = OptionParser()
 
 #change this!
-BASE_URL = "http://127.0.0.1:5000%s"
 
-API_KEY = "CHANGE_ME"
 
-ADD_URL = BASE_URL % '/image/add/'
-DEL_URL = BASE_URL % '/image/delete/'
+ADD_URL = settings.BASE_URL % '/image/add/'
+DEL_URL = settings.BASE_URL % '/image/delete/'
 
 parser.add_option("--action", dest="action",
                           help="add or delete")
 
 def main(action, key, value=None):
-    data = {'api_key': API_KEY, 'key': key}
+    data = {'api_key': settings.API_KEY, 'key': key}
     if action == 'add':
         if not value:
             sys.exit('value is required')
@@ -28,7 +27,7 @@ def main(action, key, value=None):
         response = requests.post(DEL_URL, data = data)
 
     if response.status_code == 200:
-        print "uploaded"
+        print "%s: OK" % action
     else:
         print "there was an error"
 

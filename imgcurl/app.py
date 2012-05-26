@@ -3,7 +3,8 @@ from models import ImageLink, RedisManager, ObjectNotFoundError
 import settings
 
 app = Flask(__name__)
-app.config.from_object('settings')
+#app.config.from_object('imgcurl.settings')
+app.config.from_object(settings)
 
 ImageManager = RedisManager(ImageLink)
 
