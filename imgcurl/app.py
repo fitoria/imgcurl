@@ -65,7 +65,13 @@ def delete_image():
         app.logger.critical("wrong API")
         abort(500)
 
-    pass
+@app.route('/list/', methods=['GET'])
+def list_keys():
+    key_val = ImageManager.all()
+    response = ''
+    for key, value in key_val:
+        response += '%s -> %s \n' % (key, value)
+    return response
 
 @app.errorhandler(404)
 def not_found(error):

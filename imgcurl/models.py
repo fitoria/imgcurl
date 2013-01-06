@@ -34,6 +34,11 @@ class RedisManager(ConnectionPooler):
         '''Filtering implementation'''
         raise NotImplementedError
 
+    def all(self):
+        key_value = [(key, self.client.get(key))
+                     for key in self.client.keys()]
+        return key_value
+
     def get(self, key):
         '''Returns a single object by key'''
         value = self.client.get(key)
