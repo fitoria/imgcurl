@@ -1,2 +1,59 @@
-TODO:
-    write this.
+IMGCURL is built in Python and therefore the suitable environment has to be
+installed on the server and the client. The two subdirectories represent the
+two components:
+
+imgcurl - The server
+====================
+
+Apart from Python itself you will need two more dependencies installed: A
+webserver (we assume Apache2), flash and redis.
+
+It is recommended on a live system to use Python's virtualenvs. On a
+Debian/Ubuntu system you can achieve this, using the following commands.
+
+apt-get install apache2 python-virtualenv libapache2-mod-wsgi redis-server
+virtualenv NAMEOFENVIRONMENT --no-site-packages
+source /path/to/NAMEOFENVIRONMENT/bin/activate
+pip install flask redis
+deactivate
+
+
+Create a wsgi-file
+------------------
+
+This goes into: /path/to/imgcurl/imgcurl.wsgi
+
+activate_this = '/path/to/virtualenv/bin/activate_this.py'
+execfile(activate_this, dict(__file__=activate_this))
+import sys
+sys.path.insert(0, '/path/to/imgcurl')
+from app import app as application
+
+
+Create an apache2 virtual host
+------------------------------
+
+<VirtualHost *:80>
+        ServerName YOURDOMAIN.EXT
+        ServerAdmin webmaster@local
+        WSGIScriptAlias / /path/to/imgcurl/imgcurl.wsgi
+</VirtualHost>
+
+
+
+imgcurl_cmd - The client
+========================
+
+Put it into the directory of your preference. You might want to create an alias
+for example in .bashrc
+
+alias imgcurl='python /path/to/imgcurl_cmd/imgcurl.py'
+
+
+settings.py
+========================
+
+Copy the settings.py.dist to settings.py in the same directory and change to
+your individual settings. In most cases you only have to change the url in the
+imgcurl_cmd/settings.py file. Everything else can be left to default in a
+standard configuration.
